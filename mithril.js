@@ -1443,6 +1443,7 @@
 			m.startComputation()
 			roots[index] = root
 			var currentComponent
+			var isNullComponent = component === null
 
 			if (component) {
 				currentComponent = topComponent = component
@@ -1461,7 +1462,7 @@
 				components[index] = component
 			}
 			endFirstComputation()
-			if (component === null) {
+			if (isNullComponent) {
 				removeRootElement(root, index)
 			}
 			return controllers[index]
